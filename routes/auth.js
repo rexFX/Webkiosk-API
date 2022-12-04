@@ -16,6 +16,8 @@ router.post('/login', async (req, res) => {
     BTNSubmit: "Submit",
   };
 
+  console.log(params);
+
   let myParams = formurlencoded(params);
   const post = bent('https://webkiosk.juit.ac.in:9443', 'POST', 302);
   try {

@@ -26,7 +26,7 @@ app.use('/api/v1', attendanceFetch);
 app.use('/api/v1', detailedAttendance);
 app.use('/api/v1', fetchUsername);
 app.use('/api/v1', marks);
-app.use('/api/v1/', logout);
+app.use('/api/v1', logout);
 
 
 app.listen(PORT);
