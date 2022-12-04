@@ -5,6 +5,7 @@ const cheerio = require('cheerio');
 
 router.post('/attendance', async (req, res) => {
   let myList = [];
+  console.log(req.cookies);
   axios.get('https://webkiosk.juit.ac.in:9443/StudentFiles/Academic/StudentAttendanceList.jsp', { headers: { Cookie: req.cookies['Cookie'] } })
     .then(resp => {
       let $ = cheerio.load(resp.data);
