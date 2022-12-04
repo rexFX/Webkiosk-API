@@ -21,7 +21,7 @@ router.post('/login', async (req, res) => {
   try {
     let response = await post(`/CommonFiles/UserAction.jsp?${myParams}`);
     let cookie = response.headers['set-cookie'][0].match(/^J[=A-Z0-9]*/)[0];
-    res.cookie('Cookie', `${cookie}`);
+    // res.cookie('Cookie', `${cookie}`);
     res.status(200);
     res.write(`${cookie}`);
     res.end();

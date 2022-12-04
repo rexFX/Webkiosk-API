@@ -6,7 +6,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: true }));
+
+// app.use(cors({ credentials: true, origin: true }));  //use this when sending and receiving cookies via header instead of body
+app.use(cors()); //comment this out when using cookies in header
+
 app.use(express.json());
 
 //import routes
@@ -24,4 +27,6 @@ app.use('/api/v1', detailedAttendance);
 app.use('/api/v1', fetchUsername);
 app.use('/api/v1', marks);
 app.use('/api/v1/', logout);
+
+
 app.listen(PORT);
