@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: true }));
@@ -23,5 +24,4 @@ app.use('/api/v1', detailedAttendance);
 app.use('/api/v1', fetchUsername);
 app.use('/api/v1', marks);
 app.use('/api/v1/', logout);
-
-app.listen(3001);
+app.listen(PORT);
