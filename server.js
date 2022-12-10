@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 3001;
 app.use(cookieParser());
 
 // app.use(cors({ credentials: true, origin: true }));  //use this when sending and receiving cookies via header instead of body
-app.use(cors()); //comment this out when using cookies in header
+// also use withCredentials : true with axios in your frontend app when dealing with cookies via headers.
+app.use(cors()); //comment this out when using cookies via header
 
 app.use(express.json());
 

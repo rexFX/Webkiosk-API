@@ -6,7 +6,7 @@ const axios = require('axios');
 router.post('/marks', async (req, res) => {
   let choice;
 
-  //change req.body['Cookie'] to req.cookies['Cookie'] if sending cookie via header and change cors parameters in server.js
+  //change req.body['Cookie'] to req.cookies['Cookie'] if sending cookie via header and change cors parameters in server.js if not done so
   axios.get('https://webkiosk.juit.ac.in:9443/StudentFiles/Exam/StudentEventMarksView.jsp', { headers: { Cookie: req.body['Cookie'] } })
     .then(resp => {
       let $ = cheerio.load(resp.data);
